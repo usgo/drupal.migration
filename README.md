@@ -12,7 +12,7 @@ site update. More or less the docker-compose environment is to help see answer,
 
 ## Create the `themes` and `modules` Directory with:
 
-* `$ mkdir {themes,modules}
+* `$ mkdir {themes,modules}`
 
 ## (Optional)
 
