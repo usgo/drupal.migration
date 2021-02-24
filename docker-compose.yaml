@@ -1,0 +1,25 @@
+version: '3.5'
+services:
+  drupal:
+    image: drupal:8-apache
+    ports:
+      - 8000:80
+    volumes:
+      - ./themes:/var/www/html/themes:ro
+      - ./modules:/var/www/html/modules:ro
+      - profiles:/var/www/html/profiles:ro
+      - sites:/var/www/html/sites
+  mysql:
+    image: mysql:5.7.31
+    volumes:
+      - database:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_HOST: "%"
+      MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
+      MYSQL_USER: "${MYSQL_USER}"
+      MYSQL_DATABASE: "${MYSQL_DATABASE}"
+      MYSQL_PASSWORD: "${MYSQL_PASSWORD}"
+volumes:
+  profiles:
+  sites:
+  database:
